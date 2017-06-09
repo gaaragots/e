@@ -37,7 +37,7 @@ print('dimension of the item-feature matrix', item_feature_matrix.shape)
 from dbn.models import UnsupervisedDBN
 
 #[4604, 2000, 4000, 3000, 1000]
-dbn = UnsupervisedDBN(hidden_layers_structure=[15171, 4000],
+dbn = UnsupervisedDBN(hidden_layers_structure=[5000, 400],
                       batch_size=10,
                       learning_rate_rbm=0.06,
                       n_epochs_rbm=20,
