@@ -29,7 +29,7 @@ u_item_DF.columns = ['movie id', 'movie title', 'release date', 'video release d
 data_new = pd.read_csv('data_new.csv', sep=';', header=None, encoding='ISO-8859-1')
 u_item_DF['movie desription'] = [val[2] for i, val in data_new.iterrows()]
 
-sklearn_tfidf = TfidfVectorizer(norm='l2',min_df=0, use_idf=True, smooth_idf=False, sublinear_tf=True, tokenizer=tokeniser)
+sklearn_tfidf = TfidfVectorizer(norm='l2',min_df=0, use_idf=True,max_features=5000, smooth_idf=False, sublinear_tf=True, tokenizer=tokeniser)
 item_feature_matrix = sklearn_tfidf.fit_transform(u_item_DF['movie desription'].values.astype('U'))
 print('dimension of the item-feature matrix', item_feature_matrix.shape)
 
