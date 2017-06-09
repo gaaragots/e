@@ -14,8 +14,8 @@ import pickle
 import sys
 
 # Print error (red backgroung)
-def eprint(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+#def eprint(*args, **kwargs):
+#    print(*args, file=sys.stderr, **kwargs)
 
 # change the way of tokenization
 def tokeniser(desc_text):
