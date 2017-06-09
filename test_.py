@@ -30,7 +30,7 @@ data_new = pd.read_csv('data_new.csv', sep=';', header=None, encoding='ISO-8859-
 u_item_DF['movie desription'] = [val[2] for i, val in data_new.iterrows()]
 
 sklearn_tfidf = TfidfVectorizer(norm='l2',min_df=0, use_idf=True, smooth_idf=False, sublinear_tf=True, tokenizer=tokeniser)
-item_feature_matrix = sklearn_tfidf.fit_transform([val['movie desription'] for i, val in u_item_DF.iterrows()])
+item_feature_matrix = sklearn_tfidf.fit_transform(u_item_DF['movie desription'].values.astype('U'))
 print('dimension of the item-feature matrix', item_feature_matrix.shape)
 
 # Train DBN model
