@@ -46,7 +46,7 @@ def main():
                               n_epochs_rbm=20,
                               activation_function='sigmoid')
         # 2.2. fit dbn model
-        #dbn.fit(item_feature_matrix.A)
+        dbn.fit(item_feature_matrix.A)
         # 2.3. save dbn model
         print('saving DBN model ...')
         dbn.save('model/dbn-model.pkl')
