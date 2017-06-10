@@ -40,7 +40,7 @@ def main():
     item_feature_matrix = load_model('result/item_feature_matrix.pickle')
     
     if not os.path.isfile('model/dbn-model.pkl'):
-        dbn = UnsupervisedDBN(hidden_layers_structure=[15171, 4000],
+        dbn = UnsupervisedDBN(hidden_layers_structure=[5000, 400],
                               batch_size=10,
                               learning_rate_rbm=0.06,
                               n_epochs_rbm=20,
