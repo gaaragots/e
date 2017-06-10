@@ -1,3 +1,11 @@
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from deps.util import log_to_file, tokeniser, save_model, load_model
+import os.path
+from sklearn.model_selection import train_test_split
+from dbn.models import UnsupervisedDBN
+
 @log_to_file('example.log')
 def main():
     # 0. read data and splite it to 80% for training and 20% for testing
