@@ -17,8 +17,8 @@ def main(tfidfModel=None, tfidfMatrix=None, dbn_model=None, kmeans_model=None):
     u_test1     = pd.read_csv('input/u1.test', sep='\t', header=None)
     test        = pd.DataFrame(u_test1[1].drop_duplicates())
 
-    train_desc = [items_info[items_info['movie id'] == df[1]]['movie desription'] for i, df in train.iterrows()]
-    test_desc  = [items_info[items_info['movie id'] == df[1]]['movie desription'] for i, df in test.iterrows()]
+    train_desc = [items_info[items_info['movie id'] == df[1]]['movie desription'].values[0] for i, df in train.iterrows()]
+    test_desc  = [items_info[items_info['movie id'] == df[1]]['movie desription'].values[0] for i, df in test.iterrows()]
 
 
     # 1. train tf-idf model and save it under model/tf-idf-model.pickle with the result
