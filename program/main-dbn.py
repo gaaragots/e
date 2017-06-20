@@ -77,7 +77,7 @@ if __name__ == '__main__':
     kmeans_model = 'model/kmeans-model.pkl'
 
     # Load already trained model
-    main(tfidfModel, tfidfMatrix, dbn_model, kmeans_model)
+    #main(tfidfModel, tfidfMatrix, dbn_model, kmeans_model)
     
     # Train the model from the begining
-    #main()
+    main()
