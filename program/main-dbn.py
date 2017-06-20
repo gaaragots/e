@@ -25,6 +25,7 @@ def main(tfidfModel=None, tfidfMatrix=None, dbn_model=None, kmeans_model=None):
     if not tfidfModel:
         print('traning tf-idf model ...')
         tfidf_model = TfidfVectorizer(norm='l2',min_df=0, use_idf=True,max_features=5000, smooth_idf=False, sublinear_tf=True, tokenizer=tokeniser)
+        tfidf_model.fit(train_desc)
         print('- Saving tf-idf model ...')
         save_model('model/tfidf_model.pickle', tfidf_model)
     else:
@@ -43,7 +44,7 @@ def main(tfidfModel=None, tfidfMatrix=None, dbn_model=None, kmeans_model=None):
     
 
     if not dbn_model:
-        dbn = UnsupervisedDBN(hidden_layers_structure=[5000, 400],
+        dbn = UnsupervisedDBN(hidden_layers_structure=[5000, 1000, 1000, 500],
                               batch_size=10,
                               learning_rate_rbm=0.06,
                               n_epochs_rbm=20,
