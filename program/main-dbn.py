@@ -32,7 +32,7 @@ def main(tfidfModel=None, tfidfMatrix=None, dbn_model=None, kmeans_model=None):
         tfidf_model = load_model(tfidfModel)
 
 
-    if or not tfidfMatrix:
+    if not tfidfMatrix:
         item_feature_matrix = tfidf_model.transform(train_desc)
         # 1.2. saving tf-idf matrix result
         print('- Saving tf-idf matrix result ...')
